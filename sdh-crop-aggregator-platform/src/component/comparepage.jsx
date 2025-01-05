@@ -1,11 +1,10 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import NavigationBar from '../component/signInPage/common/NavigationBar';
 import { Link } from 'react-router-dom';
-import PrimarySignInButton from '../component/signInPage/common/primarySignInButton';
 
 
 // Welcome Message Component
-const WelcomeMessage = ( {title, subtitle }) => {
+const WelcomeMessage = ({ title = 'Welcome Back', subtitle = 'We missed you!' }) => {
   return (
     <div className="text-center">
       <h1 className="font-poppins text-[24px] font-semibold text-[#4A3AFF] leading-[28px]">
@@ -35,7 +34,7 @@ const ProfilePlaceholder = ({ width = 132, height = 132 }) => {
 };
 
 // Text Field for Aadhar Input
-const TextFieldAadhar = ({ placeholder, type , value , onChange }) => {
+const TextFieldAadhar = ({ placeholder,type , value , onChange }) => {
   return (
     <div className="flex items-center my-4 w-[303px] h-[44px] px-3 py-[11px] gap-[10px] border border-[#cbcbcb] rounded-[15px]">
       <img 
@@ -56,7 +55,7 @@ const TextFieldAadhar = ({ placeholder, type , value , onChange }) => {
 };
 
 // Text Field for Password Input
-const TextFieldPassword = ({ placeholder, type, value, showPassword, ontoggleClick, onChange, disabled = false }) => {
+const TextFieldPassword = ({ placeholder,type , value, showPassword , ontoggleClick, onChange, disabled = false }) => {
   
 
   return (
@@ -95,11 +94,11 @@ const TextFieldPassword = ({ placeholder, type, value, showPassword, ontoggleCli
 };
 
 // Forgot Password Link
-const ForgotPasswordLink = () => {
+const ForgotPasswordLink = ({ text = "Forgot your password ?", href = "#" }) => {
   return (
     <Link to={'signin/forgotpassword'}>
     <a
-      href= "#"
+      href={href}
       className="text-[#4A3AFF] font-medium text-xs leading-4 my-4 font-poppins hover:underline"
       style={{
         display: 'inline-block',
@@ -108,7 +107,7 @@ const ForgotPasswordLink = () => {
         textAlign: 'center',
       }}
     >
-      Forgot your password ?
+      {text}
     </a>
     </Link>
   );
@@ -129,13 +128,12 @@ const SignInButton = ({ onClick,  }) => {
 };
 
 // Sign Up Link
-const SignUpLink = ( { text, onChange } ) => {
+const SignUpLink = ({ text , onChange }) => {
   return (
     <Link to={"signin/signup"}>
     <a 
-    href='#'
-    onClick={onChange}
-     className="font-poppins text-[#4A3AFF] text-xs font-semibold hover:underline cursor-pointer"
+      onClick={onChange}
+      className="font-poppins text-[#4A3AFF] text-xs font-semibold hover:underline cursor-pointer"
     >
       {text}
     </a>
@@ -158,20 +156,17 @@ const SignInPage = () => {
   const handlePasswordChange = (e)=>{
     setPassword(e.target.value)
   }
- const handleSignup=()=>{
-  console.log("handle signup")
- }
- 
+
 // sign in handle function
   const handleSignIn=()=>{
     alert("signin completed")
   }
 
   return (
-    
     <div className="flex flex-col items-center justify-between min-h-screen bg-white ">
-      <NavigationBar title = "Sign in" searchIcon = "true" />
-      <WelcomeMessage title = 'Welcome Back' subtitle="Hello there, sign in to continue" />
+    <>
+    <NavigationBar />
+      <WelcomeMessage subtitle="Hello there, sign in to continue" />
       <ProfilePlaceholder className="my-4" />
       <form onSubmit={handleSignIn} className="flex flex-col items-center justify-between">
         <TextFieldAadhar 
@@ -190,18 +185,15 @@ const SignInPage = () => {
           ontoggleClick={togglePasswordVisibility} 
         />
         <ForgotPasswordLink className=" mb-4" />
-        {/* <SignInButton className="mb-4" /> */}
-        <PrimarySignInButton text="Sign in" />
+        <SignInButton className="mb-4" />
       </form>
       <div className="flex items-center justify-center mt-4">
-        <span className="text-xs font-poppins text-[#8e8e8e] mr-1"> Don't have an account?</span>
-        <SignUpLink text='Sign Up'  onChange={handleSignup} />
+        <span className="text-xs font-poppins text-[#8e8e8e] mr-1">Don't have an account?</span>
+        <SignUpLink text = 'Sign Up' />
       </div>
-    </div>
-  
+      </> 
+ </div>
   );
 };
 
 export default SignInPage;
-
-

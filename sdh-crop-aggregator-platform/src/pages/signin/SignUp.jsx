@@ -161,7 +161,7 @@ const SignUpPage = () => {
 
   return (
     <div className="flex flex-col items-center gap-4 p-1">
-      <NavigationBar />
+      <NavigationBar title={"signin"} />
       <WelcomeMessage />
       <p className="text-sm text-gray-500">Hello there, sign in to continue</p>
       <ProfilePlaceholder />

@@ -1,13 +1,14 @@
 import React from "react";
 
 // Navigation Bar Component
-const NavigationBar = ({ title = "Sign in", onBack, onSearch }) => {
+const NavigationBar = ({ title ,  onSearch, searchIcon }) => {
     return (
       <nav className="w-full  h-[53px] flex items-center justify-between  px-4 bg-white shadow-md" >
         <button 
-          onClick={onBack}
+          // onClick={window.history.back()}
           className="flex items-center justify-center"
-        >
+            onClick ={() => window.history.back()}
+          >
           <img 
             src="https://dashboard.codeparrot.ai/api/assets/Z11uKps-923gCQd5" 
             alt="Back"
@@ -17,7 +18,7 @@ const NavigationBar = ({ title = "Sign in", onBack, onSearch }) => {
         <h3 className="font-poppins font-semibold text-[20px] leading-[28px] text-black">
           {title}
         </h3>
-        { title === "Forgot password" ? <span></span> :( <button 
+        { !searchIcon ? <span></span> :( <button 
             onClick={onSearch}
             className="flex items-center justify-center"
           >

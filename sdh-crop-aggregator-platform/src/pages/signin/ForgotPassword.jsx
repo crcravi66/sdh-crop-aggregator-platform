@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import NavigationBar from '../../component/signInPage/common/NavigationBar';
+import { Link } from 'react-router-dom';
 
-const AadharInputCard = ({ onSubmit }) => {
+const AadharInputCard = ( onSubmit ) => {
   const [aadharNumber, setAadharNumber] = useState('');
 
   const handleInputChange = (e) => {
@@ -23,7 +24,7 @@ const AadharInputCard = ({ onSubmit }) => {
   };
 
   // Check if the button should be enabled
-  const isButtonDisabled = aadharNumber.length !== 14;
+  // const isButtonDisabled = aadharNumber.length !== 14;
 
   return (
     <div className="w-full h-full p-6 m-auto bg-white rounded-lg shadow-lg">
@@ -44,15 +45,16 @@ const AadharInputCard = ({ onSubmit }) => {
         <p className="text-gray-800 text-sm font-medium leading-relaxed">
           We texted you a code to verify your Aadhar number
         </p>
-
+        <Link to={"/signin/forgototppage"}>
         <button
           onClick={handleSubmit}
           // disabled={isButtonDisabled}  // Disable button based on the validation
           // className={`w-full h-11 rounded-lg text-white font-medium text-base ${isButtonDisabled ? 'bg-gray-300 cursor-not-allowed' : 'bg-purple-600 hover:bg-purple-500'}`}
-          className={`w-full h-11 rounded-lg text-white font-medium text-base  bg-purple-600 hover:bg-purple-500`}
+          className={`w-full h-11 rounded-lg text-white font-medium text-base  bg-indigo-600 hover:bg-indigo-700`}
         >
           Send
         </button>
+        </Link>
       </div>
       </form>
     </div>
@@ -60,9 +62,7 @@ const AadharInputCard = ({ onSubmit }) => {
 };
 
 const ForgotPassword = () => {
-  const handleBack = () => {
-    console.log('Back clicked');
-  };
+  
 
   const handleSubmit = (aadharNumber) => {
     console.log('Aadhar number submitted:', aadharNumber);
@@ -71,7 +71,7 @@ const ForgotPassword = () => {
 
   return (
     <div className="flex flex-col items-center bg-gray-100 min-h-screen">
-      <NavigationBar title="Forgot Password" onBack={handleBack} />
+      <NavigationBar title="Forgot Password"  />
       <div className="mt-6">
         <AadharInputCard onSubmit={handleSubmit} />
       </div>
