@@ -1,0 +1,76 @@
+.splash-screen {
+  /* width: 374.55px; */
+  /* height: 812px; */
+  height: 100vw;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-bar {
+  width: 100%;
+  height: 39.81px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.time {
+  font-family: "SF Pro Text", sans-serif;
+  font-weight: 600;
+  font-size: 13.57px;
+  letter-spacing: -0.27px;
+  color: #000000;
+}
+
+.status-icons {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.icon {
+  height: 10px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.logo2 {
+  background: #4a3aff;
+  border-radius: 50%;
+}
+
+.title {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 30.5px;
+  letter-spacing: -0.27px;
+  color: #4a3aff;
+  text-align: center;
+  margin: 0;
+}
+
+.home-indicator {
+  width: 134px;
+  height: 5px;
+  background: #000000;
+  opacity: 0.1;
+  border-radius: 100px;
+  margin-bottom: 5px;
+}
