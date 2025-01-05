@@ -1,3 +1,3 @@
 # sdh-crop-aggregator-platform
 
-A Project for crop aggregator platform.
+A Fullstack application for crop aggregator platform.
