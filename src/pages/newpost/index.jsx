@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import NavigationBar from '../../component/signInPage/common/NavigationBar';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -54,9 +55,11 @@ const Index = () => {
 
       {/* Next Button */}
       <div className="p-6">
+        <Link to="/newpost/newpostscreen">
         <button className="w-full h-11 bg-[#4F46E5] text-white rounded-lg text-base font-medium">
           Next
         </button>
+        </Link>
       </div>
     </div>
     </div>

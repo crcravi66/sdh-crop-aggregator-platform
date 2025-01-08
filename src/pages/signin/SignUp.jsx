@@ -43,7 +43,7 @@ const SignUpButton = ({ children = 'Sign up', className = '' }) => {
 
 const TermsAndConditions = ({ text = "By creating an account you agree to our ", linkText = "Terms and Conditions", checked, onChange }) => {
   return (
-    <div className="flex items-center gap-2 w-[280px] h-[40px]">
+    <div className="flex items-center my-4 gap-2 w-[280px] h-[40px]">
       <input
         type="checkbox"
         checked={checked}
@@ -61,7 +61,7 @@ const TermsAndConditions = ({ text = "By creating an account you agree to our ",
 const FooterLink = ({ hasAccount, signInText }) => {
   return (
     <div className="flex items-center justify-center gap-2">
-      <span className="text-[#343434] text-xs font-normal font-['Poppins'] leading-4">{hasAccount}</span>
+      <span className="text-[#343434] text-sm my-2 font-normal font-['Poppins'] leading-4">{hasAccount}</span>
       <Link to={"/"}>
       <a href="#" className="text-[#4A3AFF] text-xs font-semibold font-['Poppins'] leading-4">{signInText}</a>
       </Link>
@@ -70,7 +70,7 @@ const FooterLink = ({ hasAccount, signInText }) => {
 };
 
 FooterLink.defaultProps = {
-  hasAccount: "Have an account?",
+  hasAccount: "Have an account ?",
   signInText: "Sign In"
 };
 
@@ -160,7 +160,7 @@ const SignUpPage = () => {
   // };
 
   return (
-    <div className="flex flex-col items-center gap-4 p-1">
+    <div className="flex flex-col justify-between items-center gap-4 p-1">
       <NavigationBar title={"signin"} />
       <WelcomeMessage />
       <p className="text-sm text-gray-500">Hello there, sign in to continue</p>

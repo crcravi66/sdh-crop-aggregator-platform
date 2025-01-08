@@ -131,6 +131,7 @@ const SignInButton = ({ onClick,  }) => {
 // Sign Up Link
 const SignUpLink = ( { text, onChange } ) => {
   return (
+    <div className='my-4'>
     <Link to={"signin/signup"}>
     <a 
     href='#'
@@ -140,6 +141,7 @@ const SignUpLink = ( { text, onChange } ) => {
       {text}
     </a>
     </Link>
+    </div>
   );
 };
 
