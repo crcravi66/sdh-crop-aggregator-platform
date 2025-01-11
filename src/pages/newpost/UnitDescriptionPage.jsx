@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import NavigationBar from '../../component/signInPage/common/NavigationBar';
+import { Link } from 'react-router-dom';
+import PrimaryNextButton from '../../component/signInPage/common/PrimaryNextButton';
 
 const UnitDescriptionPage = () => {
     const [selectedOption, setSelectedOption] = useState('');
@@ -30,7 +32,7 @@ const UnitDescriptionPage = () => {
       <div className="  flex flex-col  h-screen items-center mb-4">   
       <NavigationBar title={'New Post'} />
       
-      <div className="sm:w-7/12 flex justify-between flex-col px-4 py-6 ">
+      <div className=' mx-auto flex-col max-w-lg px-2  flex justify-around '>
         {/* Dropdown Select */}
         <div className="my-6">
             <label className="block mb-2 text-xs font-semibold text-[#979797]">
@@ -131,82 +133,15 @@ const UnitDescriptionPage = () => {
           ))}
         </div>
       </div>
+    {/* Next Button */}
+    <div className="px-2 sm:px-1 my-4 ">
+            <Link to="/newpost/quantitypage">
+            <PrimaryNextButton/>
+            </Link>
+        </div>    
     </div>
      
-      {/* <div className="mb-6">
-        <label className="block mb-2 text-xs font-semibold text-[#979797]">
-          Choose unit
-        </label>
-        <div className="relative">
-          <select className="w-full h-11 px-3 text-sm font-medium text-[#8e8e8e] bg-white border border-[#E5E7EB] rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-[#4a3aff]">
-            <option value="" disabled>Select</option>
-            <option value="unit1">Unit 1</option>
-            <option value="unit2">Unit 2</option>
-          </select>
-          <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-            <img 
-              src="https://dashboard.codeparrot.ai/api/assets/Z3032XwdoACPgrIF" 
-              alt="dropdown arrow"
-              className="w-4 h-4"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className="mb-6">
-        <label className="block mb-2 text-xs font-semibold text-[#979797]">
-          Quality description (optional)
-        </label>
-        <input
-          type="text"
-          value="Pesticide-free,"
-          className="w-full h-11 px-3 rounded-lg border border-[#E5E5E5] text-sm font-medium focus:outline-none focus:border-[#4A3AFF]"
-        />
-        <div className="flex flex-wrap gap-2 mt-2">
-          {["Pesticide-free", "Hand harvested", "Organic", "Ipsum"].map((tag, index) => (
-            <div
-              key={index}
-              className={`flex items-center gap-2 px-3 py-1 rounded-[15px] ${
-                tag === "Pesticide-free"
-                  ? "bg-[#4A3AFF] text-white"
-                  : "bg-white text-[#343434] border border-[#E5E5E5]"
-              }`}
-            >
-              <span className="text-sm font-medium">{tag}</span>
-              {tag === "Pesticide-free" && (
-                <img 
-                  src="https://dashboard.codeparrot.ai/api/assets/Z300l3wdoACPgrH1"
-                  alt="close"
-                  className="w-4 h-4"
-                />
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="mb-6">
-        <label className="block text-[12px] font-semibold text-[#979797] mb-4">
-          Add picture (optional)
-        </label>
-        <div className="flex gap-3">
-          {[1, 2, 3, 4].map((id) => (
-            <button
-              key={id}
-              className="w-[72.67px] h-[72.67px] relative bg-white border border-dashed border-[#E5E5E5] rounded-lg cursor-pointer hover:border-gray-400 transition-colors"
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-[38.76px] font-light text-[#989898]">+</span>
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <button className="w-full h-11 bg-blue-600 rounded-full text-white font-medium text-base flex items-center justify-center">
-        Next
-      </button> */}
-      {/* </div> */}
+      
     </div>
   );
 };

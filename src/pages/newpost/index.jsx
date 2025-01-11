@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import NavigationBar from '../../component/signInPage/common/NavigationBar';
 import { Link } from 'react-router-dom';
+import PrimaryNextButton from '../../component/signInPage/common/PrimaryNextButton';
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -41,7 +42,7 @@ const Index = () => {
       </div>
 
       {/* Cards */}
-      <div className="flex-1 px-2 sm:px-6 space-y-4">
+      <div className="flex-1 px-2 my-3 sm:px-6 space-y-4">
         {filteredPosts.map((post, index) => (
           <div key={index} className="p-4 border rounded-xl flex items-center justify-between">
             <div>
@@ -54,11 +55,10 @@ const Index = () => {
       </div>
 
       {/* Next Button */}
-      <div className="p-6">
+      <div className="p-2 sm:p-6  ">
         <Link to="/newpost/newpostscreen">
-        <button className="w-full h-11 bg-[#4F46E5] text-white rounded-lg text-base font-medium">
-          Next
-        </button>
+        <PrimaryNextButton/>
+        
         </Link>
       </div>
     </div>
