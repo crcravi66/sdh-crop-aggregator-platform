@@ -1,6 +1,5 @@
 import React from 'react';
 import { IoIosNotifications } from "react-icons/io"
-import { AiFillHome } from "react-icons/ai"
 
 const index = () => {
   return (
@@ -11,7 +10,7 @@ const index = () => {
       </div> */}
 
 
-    <div className='  sm:mx-auto flex-col min-w-72 sm:w-96 sm:px-2 flex justify-around '>
+    <div className='   sm:mx-auto flex-col min-w-72 sm:w-96 sm:px-2 flex justify-around '>
 
       {/* User Info */}
       <div className="flex items-center px-6 py-4">
