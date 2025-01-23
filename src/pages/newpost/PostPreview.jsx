@@ -18,6 +18,7 @@ const PostPreview = ({
   return (
     <div className="w-full  mx-auto bg-white">
      <NavigationBar title="Post Preview" searchIcon={true} />
+     <div className=' mx-auto flex-col max-w-lg px-2  flex justify-around '>
 
       {/* Images */}
       <div className="px-6 mt-4">
@@ -30,7 +31,7 @@ const PostPreview = ({
 
       {/* Details Section */}
       <div className="px-6 mt-6">
-        <h4 className="text-[#343434] text-base font-semibold mb-4">Details</h4>
+        <h4 className="text-[#343434] text-base font-semibold mx-3 mb-4">Details</h4>
         
         <div className="bg-white rounded-lg p-4 shadow-sm">
           <div className="space-y-3">
@@ -73,6 +74,7 @@ const PostPreview = ({
             <PrimaryNextButton title={'Publish'} />
             </Link>
         </div>
+      </div>
       </div>
     </div>
   );
