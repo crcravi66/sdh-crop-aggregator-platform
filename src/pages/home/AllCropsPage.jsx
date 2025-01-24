@@ -71,7 +71,7 @@ function AllCropsPage() {
                 </div>
               </div>
               <div className="flex flex-col items-end justify-between">
-                <button className="w-[14.4px] h-[18.4px] mt-2">
+                <button type="button" className="w-[14.4px] h-[18.4px] mt-2">
                   <img src="https://dashboard.codeparrot.ai/api/image/Z5HGrvA8XwfbJP6Y/group.png" alt="bookmark" />
                 </button>
                 <div className="text-[16px] font-semibold text-[#FF4267]">
