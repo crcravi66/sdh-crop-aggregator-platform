@@ -60,7 +60,7 @@ const NewPostScreen = () => {
         {/* Next Button */}
       <div className="px-2 sm:p-4 my-4 ">
         <Link to="/newpost/unitdescriptionpage">
-        <PrimaryNextButton/>
+        <PrimaryNextButton title={"Next"}/>
         
         </Link>
       </div>

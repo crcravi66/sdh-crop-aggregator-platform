@@ -57,7 +57,7 @@ const Index = () => {
       {/* Next Button */}
       <div className="p-2 sm:p-6  ">
         <Link to="/newpost/newpostscreen">
-        <PrimaryNextButton/>
+        <PrimaryNextButton title={"Next"}/>
         
         </Link>
       </div>

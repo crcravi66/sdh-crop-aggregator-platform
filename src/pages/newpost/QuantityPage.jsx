@@ -78,7 +78,7 @@ const QuantityPage = ({ onAmountSelect,  defaultAmount }) => {
          {/* Next Button */}
         <div className="px-2 sm:px-2 my-4 sm:my-6 ">
           <Link to="/newpost/locationselector">
-            <PrimaryNextButton/>
+            <PrimaryNextButton title={'Next'}/>
           </Link>
         </div>
       </div>

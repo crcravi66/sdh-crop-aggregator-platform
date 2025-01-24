@@ -76,8 +76,8 @@ const LocationSelector = () => {
                 </div>
             </div>
             
-            <Link to="/newpost/newpostscreen">
-               <PrimaryNextButton/>
+            <Link to="/newpost/postpreview">
+               <PrimaryNextButton title={'Next'}/>
             </Link>
         </div>
             

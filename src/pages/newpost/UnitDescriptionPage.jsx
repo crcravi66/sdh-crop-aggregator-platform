@@ -136,7 +136,7 @@ const UnitDescriptionPage = () => {
     {/* Next Button */}
     <div className="px-2 sm:px-1 my-4 ">
             <Link to="/newpost/quantitypage">
-            <PrimaryNextButton/>
+            <PrimaryNextButton title={'Next'}/>
             </Link>
         </div>    
     </div>
