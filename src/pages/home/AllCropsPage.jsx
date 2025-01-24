@@ -33,8 +33,7 @@ function AllCropsPage() {
             {['100km', '10km', '20km'].map((distance, index) => (
               <div
                 key={index}
-                className={`flex items-center justify-center w-[100px] h-11 rounded-[15px] cursor-pointer ${
-                  index === 0 ? 'bg-[#4a3aff] text-white' : 'bg-[#f2f1f9] text-[#343434]'
+                className={`flex items-center justify-center w-[100px] h-11 rounded-[15px] cursor-pointer ${index === 0 ? 'bg-[#4a3aff] text-white' : 'bg-[#f2f1f9] text-[#343434]'
                 }`}
               >
                 <span className="font-[Poppins] font-medium text-base leading-6">
