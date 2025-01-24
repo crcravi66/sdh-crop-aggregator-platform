@@ -1,38 +1,46 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
+import antfu from '@antfu/eslint-config';
 
-export default [
-  { ignores: ['dist'] },
+export default antfu(
   {
-    files: ['**/*.{js,jsx}'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
-    },
-    settings: { react: { version: '18.3' } },
-    plugins: {
-      react,
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-    },
-    rules: {
-      ...js.configs.recommended.rules,
-      ...react.configs.recommended.rules,
-      ...react.configs['jsx-runtime'].rules,
-      ...reactHooks.configs.recommended.rules,
-      'react/jsx-no-target-blank': 'off',
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
-    },
+    ignores: ['public', '**/public/**', 'dist', '**/dist/**', 'node_modules', '**/node_modules/**'],
+    formatters: true,
+    react: true
   },
-]
+  {
+    rules: {
+      'eslint-comments/no-unlimited-disable': 'off',
+      'curly': 'off',
+      'no-unused-vars': 'warn',
+      'antfu/consistent-list-newline': 'off',
+      'import/order': 'off',
+      'node/prefer-global/process': 'off',
+      'no-console': 'off',
+      'no-debugger': 'off',
+      'ts/method-signature-style': 'off',
+      'ts/no-use-before-define': 'off',
+      'unused-imports/no-unused-vars': 'off',
+      'style/max-statements-per-line': 'off',
+      'style/semi': ['error', 'always'],
+      'style/comma-dangle': ['error', 'never'],
+      'style/member-delimiter-style': ['error', {
+        multiline: {
+          delimiter: 'semi',
+          requireLast: true
+        },
+        singleline: {
+          delimiter: 'semi',
+          requireLast: false
+        },
+        multilineDetection: 'brackets'
+      }],
+      'no-restricted-syntax': [
+        'warn',
+        {
+          selector: 'DebuggerStatement',
+          message: 'Function expressions are not allowed.'
+        }
+      ],
+      'no-throw-literal': 'off'
+    }
+  }
+);

@@ -20,7 +20,7 @@
 }
 
 .time {
-  font-family: "SF Pro Text", sans-serif;
+  font-family: 'SF Pro Text', sans-serif;
   font-weight: 600;
   font-size: 13.57px;
   letter-spacing: -0.27px;
@@ -57,7 +57,7 @@
 }
 
 .title {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
   font-size: 30.5px;
   letter-spacing: -0.27px;

@@ -1,10 +1,7 @@
-
-import { Router,Routes,Route, Link, useRoutes , } from 'react-router-dom';
 // import './App.css'
 import { Suspense } from 'react';
+import { useRoutes } from 'react-router-dom';
 import routes from '~react-pages';
-
-
 
 function App() {
   return (
@@ -14,7 +11,7 @@ function App() {
         {useRoutes(routes)}
       </Suspense>
     </>
-   
+
   );
 }
 
@@ -28,5 +25,4 @@ function App() {
 
 // </Routes>
 
-
-export default App
+export default App;

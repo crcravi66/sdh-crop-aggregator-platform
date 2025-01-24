@@ -1,11 +1,11 @@
 // 'use client'
 
-import { useState } from 'react'
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
+import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
 
 export default function AlertMsg() {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(true);
 
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-10">
@@ -57,5 +57,5 @@ export default function AlertMsg() {
         </div>
       </div>
     </Dialog>
-  )
+  );
 }

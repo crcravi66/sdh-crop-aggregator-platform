@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import NavigationBar from '../../component/signInPage/common/NavigationBar';
 import TextField from '../../component/signInPage/common/TextField';
-import { Link } from 'react-router-dom';
 
-
-const WelcomeMessage = ({ title = 'Welcome Back' }) => {
+function WelcomeMessage({ title = 'Welcome Back' }) {
   return (
     <div className="welcome-message flex justify-center items-center h-[28px]">
       <h1 className="text-[24px] font-semibold text-[#4A3AFF] leading-[28px] font-poppins">
@@ -12,25 +11,24 @@ const WelcomeMessage = ({ title = 'Welcome Back' }) => {
       </h1>
     </div>
   );
-};
+}
 
-const ProfilePlaceholder = ({ width = 132, height = 132, className = '' }) => {
+function ProfilePlaceholder({ width = 132, height = 132, className = '' }) {
   return (
     <div className={`flex items-center justify-center bg-gray-300 rounded-full ${className}`} style={{ width: `${width}px`, height: `${height}px` }}>
       <img
-        src={`https://dashboard.codeparrot.ai/api/assets/Z11zmxvKm34NfumB`}
+        src="https://dashboard.codeparrot.ai/api/assets/Z11zmxvKm34NfumB"
         alt="Profile placeholder"
         className="w-full h-full object-cover rounded-full"
       />
     </div>
   );
-};
+}
 
-
-
-const SignUpButton = ({ children = 'Sign up', className = '' }) => {
+function SignUpButton({ children = 'Sign up', className = '' }) {
   return (
     <button
+      type="button"
       // disabled={disabled}
       className={`w-[327px] h-[44px] bg-[#3f3fbe] rounded-full flex items-center justify-center hover:bg-sky-600 disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
     >
@@ -39,9 +37,9 @@ const SignUpButton = ({ children = 'Sign up', className = '' }) => {
       </span>
     </button>
   );
-};
+}
 
-const TermsAndConditions = ({ text = "By creating an account you agree to our ", linkText = "Terms and Conditions", checked, onChange }) => {
+function TermsAndConditions({ text = 'By creating an account you agree to our ', linkText = 'Terms and Conditions', checked, onChange }) {
   return (
     <div className="flex items-center my-4 gap-2 w-[280px] h-[40px]">
       <input
@@ -56,31 +54,31 @@ const TermsAndConditions = ({ text = "By creating an account you agree to our ",
       </p>
     </div>
   );
+}
+
+const footerLinkDefaultProps = {
+  hasAccount: 'Have an account ?',
+  signInText: 'Sign In'
 };
 
-const FooterLink = ({ hasAccount, signInText }) => {
+function FooterLink({ hasAccount, signInText } = footerLinkDefaultProps) {
   return (
     <div className="flex items-center justify-center gap-2">
       <span className="text-[#343434] text-sm my-2 font-normal font-['Poppins'] leading-4">{hasAccount}</span>
-      <Link to={"/"}>
-      <a href="#" className="text-[#4A3AFF] text-xs font-semibold font-['Poppins'] leading-4">{signInText}</a>
+      <Link to="/">
+        <a href="#" className="text-[#4A3AFF] text-xs font-semibold font-['Poppins'] leading-4">{signInText}</a>
       </Link>
     </div>
   );
-};
-
-FooterLink.defaultProps = {
-  hasAccount: "Have an account ?",
-  signInText: "Sign In"
-};
+}
 
 // SignUpPage Component with Validation
-const SignUpPage = () => {
+function SignUpPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [aadhar, setAadhar] = useState('');
   const [password, setPassword] = useState('');
-  const [termsAccepted, setTermsAccepted ]= useState(false)
+  const [termsAccepted, setTermsAccepted] = useState(false);
 
   // const [formData, setFormData] = useState({
   //   name: '',
@@ -105,31 +103,32 @@ const SignUpPage = () => {
   //   }));
   // };
 
-  const handleNameChange =(e)=>{
-    console.log(e.target.value)
-    setName(e.target.value)
-  } 
-  const handleEmailChange =(e)=>{
-    console.log(e.target.value)
-    setEmail(e.target.value)
-  } 
-  const handleAadharChange =(e)=>{
-    console.log(e.target.value)
-    setAadhar(e.target.value)
-  } 
-  const handlePasswordChange =(e)=>{
-    console.log(e.target.value)
-    setPassword(e.target.value)
-  } 
-  const handleCheckBoxChange =(e)=>{
-    setTermsAccepted(e.target.checked)
-  } 
+  const handleNameChange = (e) => {
+    console.log(e.target.value);
+    setName(e.target.value);
+  };
+  const handleEmailChange = (e) => {
+    console.log(e.target.value);
+    setEmail(e.target.value);
+  };
+  const handleAadharChange = (e) => {
+    console.log(e.target.value);
+    setAadhar(e.target.value);
+  };
+  const handlePasswordChange = (e) => {
+    console.log(e.target.value);
+    setPassword(e.target.value);
+  };
+  const handleCheckBoxChange = (e) => {
+    setTermsAccepted(e.target.checked);
+  };
 
   // Handle form submission
   const handleSubmit = (e) => {
     // e.preventDefault();
-    alert("submitted...")
-  }
+    // eslint-disable-next-line no-alert
+    alert('submitted...');
+  };
 
   //   // Validate fields
   //   const validationErrors = validate(formData);
@@ -161,7 +160,7 @@ const SignUpPage = () => {
 
   return (
     <div className="flex flex-col justify-between items-center gap-4 p-1">
-      <NavigationBar title={"signin"} />
+      <NavigationBar title="signin" />
       <WelcomeMessage />
       <p className="text-sm text-gray-500">Hello there, sign in to continue</p>
       <ProfilePlaceholder />
@@ -205,19 +204,14 @@ const SignUpPage = () => {
         />
         {errors.termsAccepted && <p className="text-red-500 text-sm">{errors.termsAccepted}</p>}
 
-        <SignUpButton disabled={isSubmitting} >Sign up</SignUpButton>
+        <SignUpButton disabled={isSubmitting}>Sign up</SignUpButton>
       </form>
 
       <FooterLink />
     </div>
   );
-};
+}
 
 export default SignUpPage;
-
-
-
-
-
 
 //

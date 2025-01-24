@@ -1,9 +1,7 @@
-import React from 'react';
-import { IoIosNotifications } from "react-icons/io";
-import { AiFillHome } from "react-icons/ai";
+import { IoIosNotifications } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
-const index = () => {
+function index() {
   return (
     <div className="min-h-screen items-center w-full flex flex-col bg-[#4a3aff] text-white">
       {/* Status Bar
@@ -11,25 +9,28 @@ const index = () => {
         <img src="https://dashboard.codeparrot.ai/api/image/Z5EBh3hIZI-ZK8b7/system-2.png" alt="Status Bar" />
       </div> */}
 
-      <div className='sm:mx-auto mx-1 flex-col min-w-72   sm:w-96 flex justify-around '>
+      <div className="sm:mx-auto mx-1 flex-col min-w-72   sm:w-96 flex justify-around ">
         {/* User Info */}
         <div className="flex items-center px-2 sm:px-6 py-3">
           <img src="https://dashboard.codeparrot.ai/api/image/Z5EBh3hIZI-ZK8b7/avatar.png" alt="Avatar" className="w-12 h-12 rounded-full" />
           <div className="ml-4">
-            <p className="text-sm">Welcome back, <span className="font-semibold">Ramesh</span></p>
+            <p className="text-sm">
+              Welcome back,
+              <span className="font-semibold">Ramesh</span>
+            </p>
             <p className="text-xs">Hyderabad</p>
           </div>
           <div className="ml-auto">
-            <IoIosNotifications style={{ fontSize: '2rem'}} />
+            <IoIosNotifications style={{ fontSize: '2rem' }} />
           </div>
         </div>
 
-        <div className='bg-white rounded-xl'>
+        <div className="bg-white rounded-xl">
           {/* Search Field */}
           <div className="relative my-2 sm:my-4 flex items-center w-full px-2 sm:px-6">
-            <input 
-              type="text" 
-              placeholder="Search" 
+            <input
+              type="text"
+              placeholder="Search"
               className="w-full h-[44px] px-3 py-[11px] rounded-[15px] border border-[#cbcbcb] text-[14px] font-medium leading-[150%] text-[#8e8e8e] focus:outline-none focus:border-[#5655b9]"
             />
             <img src="https://dashboard.codeparrot.ai/api/image/Z5EDX73tvuKvN6XS/icon.png" alt="search" className="absolute right-4 sm:right-8 w-6 h-6" />
@@ -37,21 +38,25 @@ const index = () => {
 
           {/* Category Items */}
           <div className="flex flex-row gap-4 sm:gap-6 w-full px-2 sm:px-6">
-            {/* Exchange */}   
-              <div className="flex-1">
-                <Link to="/home/exchangelayout">
-                  <div className="w-full h-full py-4 bg-white rounded-2xl flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
-                    <img src="https://dashboard.codeparrot.ai/api/image/Z5EDX73tvuKvN6XS/icon-c.png" alt="exchange" className="w-7 h-7 mb-2" />
-                    <span className="font-medium text-xs text-[#979797] text-center leading-4">Exchange</span>
-                  </div>
-                </Link>
-              </div>
+            {/* Exchange */}
+            <div className="flex-1">
+              <Link to="/home/exchangelayout">
+                <div className="w-full h-full py-4 bg-white rounded-2xl flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
+                  <img src="https://dashboard.codeparrot.ai/api/image/Z5EDX73tvuKvN6XS/icon-c.png" alt="exchange" className="w-7 h-7 mb-2" />
+                  <span className="font-medium text-xs text-[#979797] text-center leading-4">Exchange</span>
+                </div>
+              </Link>
+            </div>
 
             {/* My Quotes */}
             <div className="flex-1">
               <div className="w-full h-full py-4 bg-white rounded-2xl flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
                 <img src="https://dashboard.codeparrot.ai/api/image/Z5EDX73tvuKvN6XS/icon-c-2.png" alt="quotes" className="w-7 h-7 mb-2" />
-                <span className="font-medium text-xs text-[#979797] text-center leading-4">My<br />Quotes</span>
+                <span className="font-medium text-xs text-[#979797] text-center leading-4">
+                  My
+                  <br />
+                  Quotes
+                </span>
               </div>
             </div>
 
@@ -60,10 +65,14 @@ const index = () => {
               <div className="w-full h-full py-4 bg-white rounded-2xl flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow duration-200">
                 <div className="mb-2">
                   <svg width="27" height="15" viewBox="0 0 27 15" fill="none">
-                    <path d="M1 13.5L9.5 5L15.5 11L25.5 1" stroke="#5655B9" strokeWidth="2"/>
+                    <path d="M1 13.5L9.5 5L15.5 11L25.5 1" stroke="#5655B9" strokeWidth="2" />
                   </svg>
                 </div>
-                <span className="font-medium text-xs text-[#979797] text-center leading-4">Market<br />Trends</span>
+                <span className="font-medium text-xs text-[#979797] text-center leading-4">
+                  Market
+                  <br />
+                  Trends
+                </span>
               </div>
             </div>
           </div>
@@ -125,8 +134,8 @@ const index = () => {
               {/* Home Button Group */}
               <div className="relative">
                 <div className="flex items-center bg-[#4A3AFF] rounded-xl px-4 py-2 w-[92px] h-[36px]">
-                  <img 
-                    src="https://dashboard.codeparrot.ai/api/image/Z5EFBnhIZI-ZK8cC/icons-ho.png" 
+                  <img
+                    src="https://dashboard.codeparrot.ai/api/image/Z5EFBnhIZI-ZK8cC/icons-ho.png"
                     alt="Home"
                     className="w-5 h-5 mr-2"
                   />
@@ -136,8 +145,8 @@ const index = () => {
 
               {/* Search Icon */}
               <div>
-                <img 
-                  src="https://dashboard.codeparrot.ai/api/image/Z5EFBnhIZI-ZK8cC/icosn-se.png" 
+                <img
+                  src="https://dashboard.codeparrot.ai/api/image/Z5EFBnhIZI-ZK8cC/icosn-se.png"
                   alt="Search"
                   className="w-6 h-6"
                 />
@@ -145,8 +154,8 @@ const index = () => {
 
               {/* Message Icon */}
               <div>
-                <img 
-                  src="https://dashboard.codeparrot.ai/api/image/Z5EFBnhIZI-ZK8cC/icon.png" 
+                <img
+                  src="https://dashboard.codeparrot.ai/api/image/Z5EFBnhIZI-ZK8cC/icon.png"
                   alt="Message"
                   className="w-6 h-6"
                 />
@@ -154,8 +163,8 @@ const index = () => {
 
               {/* user Icon */}
               <div>
-                <img 
-                  src="https://dashboard.codeparrot.ai/api/image/Z5EBh3hIZI-ZK8b7/icon-4.png" 
+                <img
+                  src="https://dashboard.codeparrot.ai/api/image/Z5EBh3hIZI-ZK8b7/icon-4.png"
                   alt="Message"
                   className="w-6 h-6"
                 />
@@ -166,7 +175,6 @@ const index = () => {
       </div>
     </div>
   );
-};
+}
 
 export default index;
-

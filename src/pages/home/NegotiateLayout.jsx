@@ -1,20 +1,19 @@
-import React from 'react';
-import NavigationBar from '../../component/signInPage/common/NavigationBar';
 import { Link } from 'react-router-dom';
+import NavigationBar from '../../component/signInPage/common/NavigationBar';
 
-const NegotiateLayout = () => {
+function NegotiateLayout() {
   return (
     <div className="flex flex-col w-full min-h-screen">
-   
+
       {/* Navigation Bar */}
-      <NavigationBar title={'POST20241201-12345'} searchIcon={true} />
+      <NavigationBar title="POST20241201-12345" searchIcon />
 
       {/* Main Content */}
       <div className="flex-grow flex flex-col items-center">
         {/* Image Gallery */}
         <div className="flex-none w-11/12 max-w-[332px] flex flex-col gap-[13px] mt-4">
           <div className="w-full h-[180px]">
-            <img 
+            <img
               src="https://dashboard.codeparrot.ai/api/image/Z5JA0vA8XwfbJP9Y/illustra.png"
               alt="Main"
               className="w-full h-full object-cover rounded-t-[16px]"
@@ -61,7 +60,7 @@ const NegotiateLayout = () => {
         {/* Input Fields and Primary Button */}
         <div className="flex-none w-11/12 max-w-[327px] my-6">
           <div className="w-full flex flex-col gap-4">
-            <input 
+            <input
               type="text"
               placeholder="Enter Quantity"
               className="w-full h-11 px-3 rounded-xl border border-[#cbcbcb] text-gray-800 font-semibold font-[Poppins]  text-sm focus:outline-none"
@@ -71,28 +70,28 @@ const NegotiateLayout = () => {
                 Enter your quote
               </label>
               <div className="flex">
-                <input 
+                <input
                   type="text"
                   placeholder="Enter Amount"
                   className="w-full h-11 px-3 rounded-xl border border-[#cbcbcb] text-gray-800 font-[Poppins] font-semibold text-sm focus:outline-none"
                 />
                 <div className="w-3/5 mx-2 h-11">
-                <Link to="/home/yourquotepage">
-                <button 
-                  className="w-full h-full bg-[#4a3aff] rounded-[15px] text-white font-[Poppins] font-medium text-base"
-                >
-                  Next
-                </button>
-                </Link>
+                  <Link to="/home/yourquotepage">
+                    <button
+                      className="w-full h-full bg-[#4a3aff] rounded-[15px] text-white font-[Poppins] font-medium text-base"
+                    >
+                      Next
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
-      </div>     
+      </div>
     </div>
   );
-};
+}
 
 export default NegotiateLayout;
