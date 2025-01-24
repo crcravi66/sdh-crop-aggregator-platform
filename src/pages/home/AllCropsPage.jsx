@@ -91,4 +91,3 @@ const AllCropsPage = () => {
 
 export default AllCropsPage;
 
-
