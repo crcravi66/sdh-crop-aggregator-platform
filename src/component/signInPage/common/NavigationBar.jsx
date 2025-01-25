@@ -3,7 +3,6 @@ function NavigationBar({ title, onSearch, searchIcon }) {
   return (
     <nav className="w-full  h-[53px] flex items-center justify-between  px-4 bg-white shadow-md">
       <button
-        // onClick={window.history.back()}
         className="flex items-center justify-center"
         onClick={() => window.history.back()}
       >
@@ -23,11 +22,7 @@ function NavigationBar({ title, onSearch, searchIcon }) {
               onClick={onSearch}
               className="flex items-center justify-center"
             >
-              <img
-                src="https://dashboard.codeparrot.ai/api/assets/Z11uKps-923gCQd6"
-                alt="Search"
-                className="w-5 h-5"
-              />
+              <img className="w-7 h-7  brightness-50 contrast-50" src="https://img.icons8.com/pastel-glyph/128/search--v2.png" alt="search" />
             </button>
           )}
     </nav>

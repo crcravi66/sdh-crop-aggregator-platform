@@ -1,7 +1,7 @@
 function TextField({ label, icon, type, value, onChange, error }) {
   return (
-    <div className="relative flex items-center w-[303px] h-[44px] my-2 px-3 py-[11px] border border-[#cbcbcb] rounded-[15px]">
-      <img src={icon} alt="icon" className="w-6 h-6 absolute left-3" />
+    <div className="relative flex items-center w-full h-11 my-3 px-3 py-[11px] border border-[#cbcbcb] rounded-[15px]">
+      <img src={icon} alt="icon" className="w-6 h-6 absolute left-3 brightness-50 contrast-50" />
       <input
         type={type}
         placeholder={label}

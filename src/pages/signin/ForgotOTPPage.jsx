@@ -34,9 +34,7 @@ function ForgotOTPPage() {
           </p>
         </div>
         <Link to="/signin/changepasswordpage">
-          {/* <button className="mt-6 mx-auto px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"> */}
           <button className="w-full h-11 my-2 rounded-lg text-white font-medium text-base  bg-indigo-600 hover:bg-indigo-700">
-
             Change Password
           </button>
         </Link>

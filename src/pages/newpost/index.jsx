@@ -18,10 +18,9 @@ function Index() {
   );
 
   return (
-
-    <div className="flex flex-col min-h-screen bg-white ">
+    <div className="  min-h-screen bg-white ">
       <NavigationBar title="New Post" searchIcon />
-      <div className="max-w-md mx-auto w-64 sm:w-96">
+      <div className="max-w-md mx-auto ">
 
         {/* Search Bar */}
         <div className="px-2 sm:px-6 py-4">
@@ -58,7 +57,6 @@ function Index() {
         <div className="p-2 sm:p-6  ">
           <Link to="/newpost/newpostscreen">
             <PrimaryNextButton title="Next" />
-
           </Link>
         </div>
       </div>

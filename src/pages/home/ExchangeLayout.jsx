@@ -55,16 +55,8 @@ function ExchangeLayout() {
           </div>
 
           <PrimaryNextButton title="Exchange" />
-          {/* <button className="bg-blue-600 rounded-lg h-11 text-white font-medium text-base">
-            Exchange
-          </button> */}
         </div>
       </div>
-
-      {/* Tab Bar */}
-      {/* <div className="flex items-center justify-center bg-white border-t border-gray-300 w-full h-8">
-        <div className="w-full h-px bg-gray-400"></div>
-      </div> */}
     </div>
   );
 }

@@ -30,10 +30,9 @@ function LocationSelector() {
   };
 
   return (
-    <div className="bg-white h-screen   items-center flex flex-col">
+    <div className="bg-white h-screen ">
       <NavigationBar title="New Post" searchIcon />
-
-      <div className="flex justify-between flex-col   w-full max-w-md p-4 font-poppins">
+      <div className=" mx-auto flex-col my-4 pb-2 max-w-md px-2  flex justify-around ">
         <h2 className="text-xs font-semibold text-[#979797] mb-2">Location</h2>
 
         {/* Search Input */}
@@ -81,7 +80,6 @@ function LocationSelector() {
           <PrimaryNextButton title="Next" />
         </Link>
       </div>
-
     </div>
   );
 }

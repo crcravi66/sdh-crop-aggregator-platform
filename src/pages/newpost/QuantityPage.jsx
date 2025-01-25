@@ -25,11 +25,11 @@ function QuantityPage({ onAmountSelect, defaultAmount }) {
   };
 
   return (
-    <div className="bg-white h-screen  items-center flex flex-col">
+    <div className="bg-white h-screen  ">
       {/* Header */}
       <NavigationBar title="New Post" />
 
-      <div className=" mx-auto flex-col min-w-72 sm:w-96 px-2 flex justify-around ">
+      <div className=" mx-auto flex-col max-w-md mt-3 px-2 flex justify-around ">
         <h3 className="text-[#979797] text-sm p-2 font-semibold font-poppins leading-4">Choose amount</h3>
 
         <div className="custom-amount w-full h-10 my-4 px-4  border-dark-50  rounded-lg  shadow-md  flex items-center justify-center">

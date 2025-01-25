@@ -1,31 +1,6 @@
-import './SplashScreen2page.css';
-
 function SplashScreen({ logoId = '5:72', title = 'Agrify' }) {
   return (
     <div className="flex flex-col justify-between h-screen  px-2 bg-white">
-      {/* Status Bar */}
-      <div className="flex justify-between items-center text-sm py-1 text-gray-800">
-        <div className="flex items-center space-x-1">
-          <div className="time">9:41</div>
-        </div>
-        <div className="flex space-x-3">
-          <img
-            src="https://dashboard.codeparrot.ai/api/assets/Z1wzQps-923gCQZ0"
-            alt="Cellular"
-            className="w-4 h-3"
-          />
-          <img
-            src="https://dashboard.codeparrot.ai/api/assets/Z1wzQps-923gCQZ1"
-            alt="Wifi"
-            className="w-3.5 h-3"
-          />
-          <img
-            src="https://dashboard.codeparrot.ai/api/assets/Z1wzQps-923gCQZ2"
-            alt="Battery"
-            className="w-5 h-3"
-          />
-        </div>
-      </div>
 
       {/* Content Area */}
       <div className="flex flex-col justify-center items-center flex-grow">
@@ -49,17 +24,6 @@ function SplashScreen({ logoId = '5:72', title = 'Agrify' }) {
           </svg>
         </div>
       </div>
-
-      {/* Home Indicator */}
-      <div className="flex justify-center pb-1 sm:pb-1">
-        <img
-          src="https://dashboard.codeparrot.ai/api/assets/Z1wxkq_uyZiCJNb7"
-          alt="Home Indicator"
-          className="w-40% h-3 "
-        />
-      </div>
-      {' '}
-
     </div>
   );
 }

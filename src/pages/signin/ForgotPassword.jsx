@@ -23,9 +23,6 @@ function AadharInputCard(onSubmit) {
     }
   };
 
-  // Check if the button should be enabled
-  // const isButtonDisabled = aadharNumber.length !== 14;
-
   return (
     <div className="w-full h-full p-6 m-auto bg-white rounded-lg shadow-lg">
       <form>
@@ -48,8 +45,6 @@ function AadharInputCard(onSubmit) {
           <Link to="/signin/forgototppage">
             <button
               onClick={handleSubmit}
-              // disabled={isButtonDisabled}  // Disable button based on the validation
-              // className={`w-full h-11 rounded-lg text-white font-medium text-base ${isButtonDisabled ? 'bg-gray-300 cursor-not-allowed' : 'bg-purple-600 hover:bg-purple-500'}`}
               className="w-full h-11 rounded-lg text-white font-medium text-base  bg-indigo-600 hover:bg-indigo-700"
             >
               Send

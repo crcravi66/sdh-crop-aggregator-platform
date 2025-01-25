@@ -1,6 +1,5 @@
 import NavigationBar from '@/component/signInPage/common/NavigationBar';
 import { useState } from 'react';
-
 import { Link } from 'react-router-dom';
 
 const changePasswordPageDefaultProps = {
@@ -25,8 +24,6 @@ function ChangePasswordPage(onSubmit) {
       <NavigationBar title="Change Password" />
 
       {/* Main Content */}
-      {/* <div className="flex px-4 py-6">
-        <div className="bg-white rounded-lg shadow p-6"> */}
       <div className="flex flex-col min-w-64 sm:w-96 px-4 sm:px-8 py-6 bg-white shadow rounded-lg mx-auto sm:mx-4 mt-6">
 
         {/* New Password Field */}
@@ -101,7 +98,6 @@ function ChangePasswordPage(onSubmit) {
         </Link>
       </div>
     </div>
-    // </div>
   );
 }
 

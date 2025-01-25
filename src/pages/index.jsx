@@ -4,15 +4,12 @@ import NavigationBar from '../component/signInPage/common/NavigationBar';
 import PrimarySignInButton from '../component/signInPage/common/primarySignInButton';
 
 // Welcome Message Component
-function WelcomeMessage({ title, subtitle }) {
+function WelcomeMessage({ title = 'Welcome Back' }) {
   return (
-    <div className="text-center">
-      <h1 className="font-poppins text-[24px] font-semibold text-[#4A3AFF] leading-[28px]">
+    <div className=" flex mt-4 h-6">
+      <h1 className="text-[24px] font-semibold text-[#4A3AFF] leading-[28px] font-poppins">
         {title}
       </h1>
-      <p className="font-poppins text-[16px] text-[#4A3AFF] leading-[20px]">
-        {subtitle}
-      </p>
     </div>
   );
 }
@@ -21,7 +18,7 @@ function WelcomeMessage({ title, subtitle }) {
 function ProfilePlaceholder({ width = 132, height = 132 }) {
   return (
     <div
-      className="flex items-center justify-center bg-gray-300 rounded-md"
+      className="flex items-center justify-center mx-auto my-2 bg-gray-300 rounded-md"
       style={{ width: `${width}px`, height: `${height}px` }}
     >
       <img
@@ -36,9 +33,9 @@ function ProfilePlaceholder({ width = 132, height = 132 }) {
 // Text Field for Aadhar Input
 function TextFieldAadhar({ placeholder, type, value, onChange }) {
   return (
-    <div className="flex items-center my-4 w-[303px] h-[44px] px-3 py-[11px] gap-[10px] border border-[#cbcbcb] rounded-[15px]">
+    <div className="flex items-center my-4 w-full h-12 px-3 py-[11px] gap-[10px] border border-[#cbcbcb] rounded-[15px]">
       <img
-        src="https://dashboard.codeparrot.ai/api/assets/Z11uK5s-923gCQd8"
+        src="https://img.icons8.com/?size=100&id=Nmb9tuTRN32z&format=png&color=000000"
         alt="credit-card-icon"
         className="w-6 h-6"
       />
@@ -48,7 +45,7 @@ function TextFieldAadhar({ placeholder, type, value, onChange }) {
         value={value}
         required
         onChange={onChange}
-        className="outline-none flex-1 text-[14px] bg-white font-medium text-[#7d7a7a] placeholder-[#8b8989]"
+        className="outline-none w-full flex-1 text-[14px] bg-white font-medium text-[#7d7a7a] placeholder-[#8b8989]"
       />
     </div>
   );
@@ -57,12 +54,12 @@ function TextFieldAadhar({ placeholder, type, value, onChange }) {
 // Text Field for Password Input
 function TextFieldPassword({ placeholder, type, value, showPassword, ontoggleClick, onChange, disabled = false }) {
   return (
-    <div className="relative flex items-center w-[303px] h-[44px] px-3 py-[11px] border border-[#cbcbcb] rounded-[15px]">
-      <div className="flex items-center gap-3.5">
+    <div className="relative flex items-center w-full h-12 px-3 py-[11px] border border-[#cbcbcb] rounded-[15px]">
+      <div className="flex items-center w-full gap-3.5">
         <img
-          src="https://dashboard.codeparrot.ai/api/assets/Z11uK5s-923gCQd9"
+          src="https://img.icons8.com/fluency-systems-filled/50/email.png"
           alt="email"
-          className="w-6 h-6"
+          className="w-6 h-6 brightness-50 contrast-50"
         />
         <input
           // type={showPassword ? "text" : "password"}
@@ -72,21 +69,21 @@ function TextFieldPassword({ placeholder, type, value, showPassword, ontoggleCli
           required
           placeholder={placeholder}
           disabled={disabled}
-          className="text-[14px] font-medium text-[#8e8e8e] bg-transparent outline-none w-full"
+          className="text-[14px] w-full font-medium text-[#8e8e8e] bg-transparent outline-none "
           style={{ lineHeight: '150%' }}
         />
+        <button
+          onClick={ontoggleClick}
+          type="button"
+          className="absolute right-3 top-1/2 transform -translate-y-1/2"
+        >
+          <img
+            src="https://dashboard.codeparrot.ai/api/assets/Z11uK5s-923gCQd-"
+            alt={showPassword ? 'hide password' : 'show password'}
+            className="w-5 h-5"
+          />
+        </button>
       </div>
-      <button
-        onClick={ontoggleClick}
-        type="button"
-        className="absolute right-3 top-1/2 transform -translate-y-1/2"
-      >
-        <img
-          src="https://dashboard.codeparrot.ai/api/assets/Z11uK5s-923gCQd-"
-          alt={showPassword ? 'hide password' : 'show password'}
-          className="w-5 h-5"
-        />
-      </button>
     </div>
   );
 }
@@ -94,34 +91,15 @@ function TextFieldPassword({ placeholder, type, value, showPassword, ontoggleCli
 // Forgot Password Link
 function ForgotPasswordLink() {
   return (
-    <Link to="signin/forgotpassword">
-      <a
-        href="#"
-        className="text-[#4A3AFF] font-medium text-xs leading-4 my-4 font-poppins hover:underline"
-        style={{
-          display: 'inline-block',
-          width: '141px',
-          height: '16px',
-          textAlign: 'center'
-        }}
-      >
-        Forgot your password ?
-      </a>
-    </Link>
-  );
-}
-
-// Sign In Button
-function SignInButton({ onClick }) {
-  return (
-    <button
-      onClick={onClick}
-      className="w-[327px] h-[44px] bg-[#4660b6] rounded-full flex items-center justify-center hover:bg-sky-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
-    >
-      <span className="font-poppins text-[#FFFFFF] text-sm font-medium leading-6">
-        Sign in
-      </span>
-    </button>
+    <div className=" text-right mt-3 mb-8 w-full">
+      <Link to="signin/forgotpassword">
+        <span
+          className="text-[#4A3AFF] w-full font-medium text-sm leading-4 my-5 font-poppins "
+        >
+          Forgot your password ?
+        </span>
+      </Link>
+    </div>
   );
 }
 
@@ -168,34 +146,36 @@ function SignInPage() {
 
   return (
 
-    <div className="flex flex-col items-center justify-between min-h-screen bg-white ">
+    <div className="min-h-screen bg-white ">
       <NavigationBar title="Sign in" searchIcon="true" />
-      <WelcomeMessage title="Welcome Back" subtitle="Hello there, sign in to continue" />
-      <ProfilePlaceholder className="my-4" />
-      <form onSubmit={handleSignIn} className="flex flex-col items-center justify-between">
-        <TextFieldAadhar
-          className="mb-4"
-          value={aadhar}
-          type="number"
-          placeholder="Aadhar"
-          onChange={handleAadharChange}
-        />
-        <TextFieldPassword
-          className="mb-2"
-          value={password}
-          type="text"
-          placeholder="password"
-          onChange={handlePasswordChange}
-          showPassword={showPassword}
-          ontoggleClick={togglePasswordVisibility}
-        />
-        <ForgotPasswordLink className=" mb-4" />
-        {/* <SignInButton className="mb-4" /> */}
-        <PrimarySignInButton text="Sign in" />
-      </form>
-      <div className="flex items-center justify-center mt-4">
-        <span className="text-xs font-poppins text-[#8e8e8e] mr-1"> Don't have an account?</span>
-        <SignUpLink text="Sign Up" onChange={handleSignup} />
+      <div className="mx-auto max-w-sm p-2 my-2">
+        <WelcomeMessage title="Welcome Back" subtitle="Hello there, sign in to continue" />
+        <p className="text-sm py-2 text-gray-500">Hello there, sign in to continue</p>
+        <ProfilePlaceholder className="my-4" />
+        <form onSubmit={handleSignIn} className="flex flex-col items-center justify-between">
+          <TextFieldAadhar
+            className="mb-4"
+            value={aadhar}
+            type="number"
+            placeholder="Aadhar"
+            onChange={handleAadharChange}
+          />
+          <TextFieldPassword
+            className="mb-2"
+            value={password}
+            type="text"
+            placeholder="password"
+            onChange={handlePasswordChange}
+            showPassword={showPassword}
+            ontoggleClick={togglePasswordVisibility}
+          />
+          <ForgotPasswordLink />
+          <PrimarySignInButton text="Sign in" />
+        </form>
+        <div className="flex items-center justify-center mt-4">
+          <span className="text-xs font-poppins text-[#8e8e8e] mr-1"> Don't have an account?</span>
+          <SignUpLink text="Sign Up" onChange={handleSignup} />
+        </div>
       </div>
     </div>
 

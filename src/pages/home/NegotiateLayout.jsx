@@ -86,7 +86,6 @@ function NegotiateLayout() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import TextField from '../../component/signInPage/common/TextField';
 
 function WelcomeMessage({ title = 'Welcome Back' }) {
   return (
-    <div className="welcome-message flex justify-center items-center h-[28px]">
+    <div className=" flex mt-4 h-6">
       <h1 className="text-[24px] font-semibold text-[#4A3AFF] leading-[28px] font-poppins">
         {title}
       </h1>
@@ -15,7 +15,7 @@ function WelcomeMessage({ title = 'Welcome Back' }) {
 
 function ProfilePlaceholder({ width = 132, height = 132, className = '' }) {
   return (
-    <div className={`flex items-center justify-center bg-gray-300 rounded-full ${className}`} style={{ width: `${width}px`, height: `${height}px` }}>
+    <div className={`flex items-center mx-auto my-2 justify-center bg-gray-300 rounded-md ${className}`} style={{ width: `${width}px`, height: `${height}px` }}>
       <img
         src="https://dashboard.codeparrot.ai/api/assets/Z11zmxvKm34NfumB"
         alt="Profile placeholder"
@@ -30,7 +30,7 @@ function SignUpButton({ children = 'Sign up', className = '' }) {
     <button
       type="button"
       // disabled={disabled}
-      className={`w-[327px] h-[44px] bg-[#3f3fbe] rounded-full flex items-center justify-center hover:bg-sky-600 disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
+      className={`w-full h-10 bg-[#3f3fbe] rounded-full flex items-center justify-center hover:bg-sky-600 disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
     >
       <span className="text-[#FFFFFF] font-[Poppins] font-medium text-[16px] leading-[24px]">
         {children}
@@ -41,7 +41,7 @@ function SignUpButton({ children = 'Sign up', className = '' }) {
 
 function TermsAndConditions({ text = 'By creating an account you agree to our ', linkText = 'Terms and Conditions', checked, onChange }) {
   return (
-    <div className="flex items-center my-4 gap-2 w-[280px] h-[40px]">
+    <div className="flex items-center my-5 gap-2 w-[280px] h-[40px]">
       <input
         type="checkbox"
         checked={checked}
@@ -52,22 +52,6 @@ function TermsAndConditions({ text = 'By creating an account you agree to our ',
         {text}
         <a href="#" className="text-blue-600">{linkText}</a>
       </p>
-    </div>
-  );
-}
-
-const footerLinkDefaultProps = {
-  hasAccount: 'Have an account ?',
-  signInText: 'Sign In'
-};
-
-function FooterLink({ hasAccount, signInText } = footerLinkDefaultProps) {
-  return (
-    <div className="flex items-center justify-center gap-2">
-      <span className="text-[#343434] text-sm my-2 font-normal font-['Poppins'] leading-4">{hasAccount}</span>
-      <Link to="/">
-        <a href="#" className="text-[#4A3AFF] text-xs font-semibold font-['Poppins'] leading-4">{signInText}</a>
-      </Link>
     </div>
   );
 }
@@ -91,18 +75,6 @@ function SignUpPage() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // // Handle form field changes
-  // const handleChange = (e) => {
-  //   // console.log(target)
-  //   // console.log(target.name)
-  //   // console.log(target.value)
-  //   const { name, value, type, checked } = e.target;
-  //   setFormData((prevFormData)=>({
-  //     ...prevFormData,
-  //     [name]: type === 'checkbox' ? checked : value,
-  //   }));
-  // };
-
   const handleNameChange = (e) => {
     console.log(e.target.value);
     setName(e.target.value);
@@ -125,9 +97,8 @@ function SignUpPage() {
 
   // Handle form submission
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    // eslint-disable-next-line no-alert
-    alert('submitted...');
+    e.preventDefault();
+    console.log('submitted...');
   };
 
   //   // Validate fields
@@ -159,55 +130,63 @@ function SignUpPage() {
   // };
 
   return (
-    <div className="flex flex-col justify-between items-center gap-4 p-1">
-      <NavigationBar title="signin" />
-      <WelcomeMessage />
-      <p className="text-sm text-gray-500">Hello there, sign in to continue</p>
-      <ProfilePlaceholder />
+    <div className="w-full min-h-screen ">
+      <NavigationBar title="Sign in" />
 
-      <form onSubmit={handleSubmit}>
-        <TextField
-          label="Name"
-          type="text"
-          icon="https://img.icons8.com/fluency-systems-filled/50/user-male-circle.png"
-          value={name}
-          onChange={handleNameChange}
-          error={errors.name}
-        />
-        <TextField
-          label="Aadhar"
-          type="number"
-          icon="https://img.icons8.com/?size=100&id=Nmb9tuTRN32z&format=png&color=000000"
-          value={aadhar}
-          onChange={handleAadharChange}
-          error={errors.aadhar}
-        />
-        <TextField
-          label="Email Address"
-          type="email"
-          icon="https://img.icons8.com/fluency-systems-filled/50/email.png"
-          value={email}
-          onChange={handleEmailChange}
-          error={errors.email}
-        />
-        <TextField
-          label="Password"
-          type="password"
-          icon="https://img.icons8.com/material-sharp/24/lock--v1.png"
-          value={password}
-          onChange={handlePasswordChange}
-          error={errors.password}
-        />
-        <TermsAndConditions
-          checked={termsAccepted}
-          onChange={handleCheckBoxChange}
-        />
-        {errors.termsAccepted && <p className="text-red-500 text-sm">{errors.termsAccepted}</p>}
+      <div className="mx-auto max-w-sm p-2 my-2">
+        <WelcomeMessage />
+        <p className="text-sm py-2 text-gray-500">Hello there, sign in to continue</p>
+        <ProfilePlaceholder />
 
-        <SignUpButton disabled={isSubmitting}>Sign up</SignUpButton>
-      </form>
+        <form onSubmit={handleSubmit}>
+          <TextField
+            label="Name"
+            type="text"
+            icon="https://img.icons8.com/fluency-systems-filled/50/user-male-circle.png"
+            value={name}
+            onChange={handleNameChange}
+            error={errors.name}
+          />
+          <TextField
+            label="Aadhar"
+            type="number"
+            icon="https://img.icons8.com/?size=100&id=Nmb9tuTRN32z&format=png&color=000000"
+            value={aadhar}
+            onChange={handleAadharChange}
+            error={errors.aadhar}
+          />
+          <TextField
+            label="Email Address"
+            type="email"
+            icon="https://img.icons8.com/fluency-systems-filled/50/email.png"
+            value={email}
+            onChange={handleEmailChange}
+            error={errors.email}
+          />
+          <TextField
+            label="Password"
+            type="password"
+            icon="https://img.icons8.com/material-sharp/24/lock--v1.png"
+            value={password}
+            onChange={handlePasswordChange}
+            error={errors.password}
+          />
+          <TermsAndConditions
+            checked={termsAccepted}
+            onChange={handleCheckBoxChange}
+          />
+          {errors.termsAccepted && <p className="text-red-500 text-sm">{errors.termsAccepted}</p>}
 
-      <FooterLink />
+          <SignUpButton disabled={isSubmitting}>Sign up</SignUpButton>
+        </form>
+
+        <div className="flex items-center justify-center gap-2">
+          <span className="text-[#343434] text-sm my-6 font-normal font-['Poppins'] leading-4">Have an account ?</span>
+          <Link to="/">
+            <a href="#" className="text-[#4A3AFF] text-xs font-semibold font-['Poppins'] leading-4">Sign In</a>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom';
 function index() {
   return (
     <div className="min-h-screen items-center w-full flex flex-col bg-[#4a3aff] text-white">
-      {/* Status Bar
-      <div className="h-10 bg-white flex items-center justify-between px-4">
-        <img src="https://dashboard.codeparrot.ai/api/image/Z5EBh3hIZI-ZK8b7/system-2.png" alt="Status Bar" />
-      </div> */}
 
       <div className="sm:mx-auto mx-1 flex-col min-w-72   sm:w-96 flex justify-around ">
         {/* User Info */}
@@ -27,13 +23,13 @@ function index() {
 
         <div className="bg-white rounded-xl">
           {/* Search Field */}
-          <div className="relative my-2 sm:my-4 flex items-center w-full px-2 sm:px-6">
+          <div className="relative mt-4 my-2 sm:my-4 flex items-center w-full px-2 sm:px-6">
             <input
               type="text"
               placeholder="Search"
-              className="w-full h-[44px] px-3 py-[11px] rounded-[15px] border border-[#cbcbcb] text-[14px] font-medium leading-[150%] text-[#8e8e8e] focus:outline-none focus:border-[#5655b9]"
+              className="w-full h-13 px-3 py-[11px] rounded-xl border border-[#cbcbcb] text-[14px] font-medium leading-[150%] text-[#8e8e8e] focus:outline-none focus:border-[#5655b9]"
             />
-            <img src="https://dashboard.codeparrot.ai/api/image/Z5EDX73tvuKvN6XS/icon.png" alt="search" className="absolute right-4 sm:right-8 w-6 h-6" />
+            <img className="w-6 h-6 ml-2 absolute right-5 sm:right-9 brightness-50 contrast-50" src="https://img.icons8.com/pastel-glyph/128/search--v2.png" alt="search--v2" />
           </div>
 
           {/* Category Items */}
@@ -96,7 +92,7 @@ function index() {
           <div className="flex flex-col space-y-4 px-2 sm:px-5 py-4">
             <Link to="/home/cropdetails">
               <div className="flex items-center bg-white text-black px-2 rounded-lg">
-                <img src="https://dashboard.codeparrot.ai/api/image/Z5EBh3hIZI-ZK8b7/rectangl.png" alt="Wheat" className="w-16 h-16 rounded-lg" />
+                <img src="https://3.imimg.com/data3/EP/JB/IMOB-18886571/wheat.jpg" alt="Wheat" className="w-16 h-16 rounded-l-lg" />
                 <div className="ml-4 flex-grow">
                   <p className="font-semibold">Wheat</p>
                   <p className="text-xs">100 Quintal</p>
@@ -107,7 +103,7 @@ function index() {
               </div>
             </Link>
             <div className="flex items-center bg-white text-black px-2 rounded-lg">
-              <img src="https://dashboard.codeparrot.ai/api/image/Z5EBh3hIZI-ZK8b7/rectangl-2.png" alt="Tomato" className="w-16 h-16 rounded-lg" />
+              <img src="https://images.pexels.com/photos/533280/pexels-photo-533280.jpeg?cs=srgb&dl=pexels-pixabay-533280.jpg&fm=jpg" alt="Tomato" className="w-16 h-16 rounded-l-lg" />
               <div className="ml-4 flex-grow">
                 <p className="font-semibold">Tomato</p>
                 <p className="text-xs">9 Quintal</p>
@@ -117,7 +113,7 @@ function index() {
               <p className="text-red-500 font-semibold">₹ 12/kg</p>
             </div>
             <div className="flex items-center bg-white text-black px-2 rounded-lg">
-              <img src="https://dashboard.codeparrot.ai/api/image/Z5EBh3hIZI-ZK8b7/rectangl-3.png" alt="Potato" className="w-16 h-16 rounded-lg" />
+              <img src="https://images.pexels.com/photos/2286776/pexels-photo-2286776.jpeg?cs=srgb&dl=pexels-victorino-2286776.jpg&fm=jpg" alt="Potato" className="w-16 h-16 object-cover rounded-l-lg" />
               <div className="ml-4 flex-grow">
                 <p className="font-semibold">Potato</p>
                 <p className="text-xs">53 Quintal</p>
